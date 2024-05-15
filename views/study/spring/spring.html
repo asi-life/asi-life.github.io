@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【Spring】 Spring源码知识点部分介绍 | 差不多的贝壳</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.ico">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+    <meta name="description" content="【Spring】 Spring源码知识点部分介绍">
+    <meta name="Spring源码知识点部分介绍" content="Spring源码知识点部分介绍">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.98698290.css" as="style"><link rel="preload" href="/assets/js/app.e5db9849.js" as="script"><link rel="preload" href="/assets/js/3.ed8c06e7.js" as="script"><link rel="preload" href="/assets/js/1.9e75a2be.js" as="script"><link rel="preload" href="/assets/js/42.05bdc65e.js" as="script"><link rel="prefetch" href="/assets/js/10.dcd742d7.js"><link rel="prefetch" href="/assets/js/11.9e8caa91.js"><link rel="prefetch" href="/assets/js/12.5acc7bfe.js"><link rel="prefetch" href="/assets/js/13.64c27640.js"><link rel="prefetch" href="/assets/js/14.d7c2c7ad.js"><link rel="prefetch" href="/assets/js/15.57c5ac2c.js"><link rel="prefetch" href="/assets/js/16.378ffe0f.js"><link rel="prefetch" href="/assets/js/17.89b3d75d.js"><link rel="prefetch" href="/assets/js/18.08a58208.js"><link rel="prefetch" href="/assets/js/19.0b8c12f8.js"><link rel="prefetch" href="/assets/js/20.438d1ec1.js"><link rel="prefetch" href="/assets/js/21.360c7dad.js"><link rel="prefetch" href="/assets/js/22.886d59ab.js"><link rel="prefetch" href="/assets/js/23.36693c07.js"><link rel="prefetch" href="/assets/js/24.c203effa.js"><link rel="prefetch" href="/assets/js/25.d0b49f35.js"><link rel="prefetch" href="/assets/js/26.0bd0b751.js"><link rel="prefetch" href="/assets/js/27.1ead41b5.js"><link rel="prefetch" href="/assets/js/28.8c71231e.js"><link rel="prefetch" href="/assets/js/29.0e91ba17.js"><link rel="prefetch" href="/assets/js/30.ba3f7ee4.js"><link rel="prefetch" href="/assets/js/31.a5aa6b4a.js"><link rel="prefetch" href="/assets/js/32.0180d8a3.js"><link rel="prefetch" href="/assets/js/33.1689da57.js"><link rel="prefetch" href="/assets/js/34.40068ec9.js"><link rel="prefetch" href="/assets/js/35.d45fa313.js"><link rel="prefetch" href="/assets/js/36.116b7de3.js"><link rel="prefetch" href="/assets/js/37.9156b580.js"><link rel="prefetch" href="/assets/js/38.64581f9c.js"><link rel="prefetch" href="/assets/js/39.e9338707.js"><link rel="prefetch" href="/assets/js/4.c3d42842.js"><link rel="prefetch" href="/assets/js/40.73109616.js"><link rel="prefetch" href="/assets/js/41.1b147abb.js"><link rel="prefetch" href="/assets/js/43.8854147b.js"><link rel="prefetch" href="/assets/js/44.170947a8.js"><link rel="prefetch" href="/assets/js/45.47f74164.js"><link rel="prefetch" href="/assets/js/5.d57156ee.js"><link rel="prefetch" href="/assets/js/6.bd4ca3cb.js"><link rel="prefetch" href="/assets/js/7.fadd64b2.js"><link rel="prefetch" href="/assets/js/8.edf6ba42.js"><link rel="prefetch" href="/assets/js/9.9cbd478f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.98698290.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>差不多的贝壳</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>差不多的贝壳</span>
+            
+          <span data-v-64685f0e>2021 - </span>
+          2024
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="差不多的贝壳" class="logo"> <span class="site-name">差不多的贝壳</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/人生第一次/" class="nav-link"><i class="iconfont undefined"></i>
+  人生第一次
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="iconfont undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电影/" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/categories/宫崎骏/" class="nav-link"><i class="iconfont undefined"></i>
+  宫崎骏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电视剧/" class="nav-link"><i class="iconfont undefined"></i>
+  电视剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日剧/" class="nav-link"><i class="iconfont undefined"></i>
+  日剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活剧/" class="nav-link"><i class="iconfont undefined"></i>
+  生活剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/袁隆平/" class="nav-link"><i class="iconfont undefined"></i>
+  袁隆平
+</a></li><li class="dropdown-item"><!----> <a href="/categories/国士无双/" class="nav-link"><i class="iconfont undefined"></i>
+  国士无双
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/操作系统/" class="nav-link"><i class="iconfont undefined"></i>
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/动漫/" class="nav-link"><i class="iconfont undefined"></i>
+  动漫
+</a></li><li class="dropdown-item"><!----> <a href="/categories/故事/" class="nav-link"><i class="iconfont undefined"></i>
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="/categories/婚姻/" class="nav-link"><i class="iconfont undefined"></i>
+  婚姻
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="iconfont undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试题/" class="nav-link"><i class="iconfont undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息队列/" class="nav-link"><i class="iconfont undefined"></i>
+  消息队列
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Photoshop/" class="nav-link"><i class="iconfont undefined"></i>
+  Photoshop
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网络编程/" class="nav-link"><i class="iconfont undefined"></i>
+  网络编程
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/框架/" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/近日总结/" class="nav-link"><i class="iconfont undefined"></i>
+  近日总结
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    差不多的贝壳
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>34</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>38</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/人生第一次/" class="nav-link"><i class="iconfont undefined"></i>
+  人生第一次
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="iconfont undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电影/" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/categories/宫崎骏/" class="nav-link"><i class="iconfont undefined"></i>
+  宫崎骏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电视剧/" class="nav-link"><i class="iconfont undefined"></i>
+  电视剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日剧/" class="nav-link"><i class="iconfont undefined"></i>
+  日剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活剧/" class="nav-link"><i class="iconfont undefined"></i>
+  生活剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/袁隆平/" class="nav-link"><i class="iconfont undefined"></i>
+  袁隆平
+</a></li><li class="dropdown-item"><!----> <a href="/categories/国士无双/" class="nav-link"><i class="iconfont undefined"></i>
+  国士无双
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/操作系统/" class="nav-link"><i class="iconfont undefined"></i>
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/动漫/" class="nav-link"><i class="iconfont undefined"></i>
+  动漫
+</a></li><li class="dropdown-item"><!----> <a href="/categories/故事/" class="nav-link"><i class="iconfont undefined"></i>
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="/categories/婚姻/" class="nav-link"><i class="iconfont undefined"></i>
+  婚姻
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="iconfont undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试题/" class="nav-link"><i class="iconfont undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息队列/" class="nav-link"><i class="iconfont undefined"></i>
+  消息队列
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Photoshop/" class="nav-link"><i class="iconfont undefined"></i>
+  Photoshop
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网络编程/" class="nav-link"><i class="iconfont undefined"></i>
+  网络编程
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/框架/" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/近日总结/" class="nav-link"><i class="iconfont undefined"></i>
+  近日总结
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>【Spring】 Spring源码知识点部分介绍</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>差不多的贝壳</span>
+            
+          <span data-v-64685f0e>2021 - </span>
+          2024
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">【Spring】 Spring源码知识点部分介绍</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>差不多的贝壳</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2021-09-10</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/views/study/spring/spring.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>Spring</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="spring-创建对象流程"><a href="#spring-创建对象流程" class="header-anchor">#</a> spring 创建对象流程</h2> <p>主要方法 AbstractApplicationContext#refresh()</p> <h3 id="主要步骤"><a href="#主要步骤" class="header-anchor">#</a> 主要步骤</h3> <ol><li>prepareRefresh()</li></ol> <p>主要作用：Prepare this context for refreshing. 为刷新准备上下文内容，预处理。</p> <div class="language- extra-class"><pre class="language-text"><code>a). initPropertySources() 实现内容为空，用户可根据需要自动实现初始化一些属性设置;子类自定义个性化的属性设置方法；
+
+b). getEnvironment().validateRequiredProperties(); 检验属性的合法等
+
+c). earlyApplicationEvents= new LinkedHashSet&lt;ApplicationEvent&gt;();保存容器中的一些早期的事件；
+</code></pre></div><ol start="2"><li>obtainFreshBeanFactory()</li></ol> <p>主要作用：Tell the subclass to refresh the internal bean factory. 告诉子类刷新内部bean工厂。 获取BeanFactory；</p> <div class="language- extra-class"><pre class="language-text"><code>a). DefaultListableBeanFactory beanFactory = createBeanFactory(); 创建一个默认工厂。并设置id。
+
+b). 并将这个beanFactory进行返回。
+</code></pre></div><ol start="3"><li>prepareBeanFactory(beanFactory)</li></ol> <p>主要作用： Prepare the bean factory for use in this context. 准备bean工厂，以便在此上下文中使用。BeanFactory的预准备工作（BeanFactory进行一些设置）</p> <div class="language- extra-class"><pre class="language-text"><code>a). 设置类的一些基础属性：类加载器，表达式解析器，属性编辑器等。
+
+b). 添加部分BeanPostProcessor【ApplicationContextAwareProcessor】 后置处理器
+
+c). 设置忽略的自动装配的接口EnvironmentAware、EmbeddedValueResolverAware、xxx；
+
+d). 满足条件下会增加 LoadTimeWeaverAwareProcessor 的后置处理器
+
+e). 给BeanFactory中注册一些能用的组件；environment【ConfigurableEnvironment】、systemProperties【Map&lt;String, Object&gt;】、systemEnvironment【Map&lt;String, Object&gt;】
+</code></pre></div><ol start="4"><li>postProcessBeanFactory(beanFactory)</li></ol> <p>主要作用：Allows post-processing of the bean factory in context subclasses.允许在上下文子类中对bean工厂进行后处理。子类通过重写这个方法来在BeanFactory创建并预准备完成以后做进一步的设置。</p> <p>以上1-4步骤为 BeanFactory的创建及预准备工作</p> <ol start="5"><li>invokeBeanFactoryPostProcessors(beanFactory)</li></ol> <p>主要作用：Invoke factory processors registered as beans in the context. 调用在上下文中注册为bean的工厂处理器。执行BeanFactoryPostProcessor的方法；</p> <p>两个接口：BeanFactoryPostProcessor、BeanDefinitionRegistryPostProcessor(对于BeanFactoryPostProcessor的扩展类，BeanDefinitionRegistryPostProcessor可以注册更多的bean定义，这些定义反过来定义BeanFactoryPostProcessor实例。)</p> <div class="language- extra-class"><pre class="language-text"><code>a). 获取工厂下当前所有的后置处理方法
+
+b). 先处理实现了 BeanDefinitionRegistryPostProcessor 接口的后置处理类。有限处理实现了 PriorityOrdered 的 BeanDefinitionRegistryPostProcessor。 再处理实现了 Ordered 的 BeanDefinitionRegistryPostProcessor。最后再处理没有实现 Ordered接口的 BeanDefinitionRegistryPostProcessor。 主要执行 postProcessBeanDefinitionRegistry() 方法。
+
+c). 用同样的逻辑处理 BeanFactoryPostProcessor 接口的后置处理类，主要执行 postProcessBeanFactory() 方法。
+</code></pre></div><ol start="6"><li>registerBeanPostProcessors(beanFactory)</li></ol> <p>主要作用：Register bean processors that intercept bean creation. 注册拦截bean创建的bean处理器。注册BeanPostProcessor（Bean的后置处理器）</p> <div class="language- extra-class"><pre class="language-text"><code>a). 获取所有的 BeanPostProcessor;后置处理器都默认可以通过PriorityOrdered、Ordered接口来执行优先级。
+
+对于PriorityOrdered 使用getBean()注册对应的处理器，然后添加到BeanFacotry中beanFactory.addBeanPostProcessor(postProcessor);
+
+再注册Ordered接口的。
+
+最后注册没有实现任何优先级接口的。
+
+b). 最终注册所有 MergedBeanDefinitionPostProcessor；
+
+c). 注册一个ApplicationListenerDetector；来在Bean创建完成后检查是否是ApplicationListener，如果是 则 applicationContext.addApplicationListener((ApplicationListener&lt;?&gt;) bean);
+</code></pre></div><ol start="7"><li>initMessageSource()</li></ol> <p>主要作用：Initialize message source for this context. 为此上下文初始化消息源。初始化MessageSource组件（做国际化功能；消息绑定，消息解析）；</p> <div class="language- extra-class"><pre class="language-text"><code>a). 获取BeanFactory
+b). 看容器中是否有id为messageSource的，类型是MessageSource的组件
+    如果有赋值给messageSource，如果没有自己创建一个DelegatingMessageSource；
+        MessageSource：取出国际化配置文件中的某个key的值；能按照区域信息获取；
+c). 把创建好的MessageSource注册在容器中，以后获取国际化配置文件的值的时候，可以自动注入MessageSource；beanFactory.registerSingleton(MESSAGE_SOURCE_BEAN_NAME, this.messageSource);	
+</code></pre></div><ol start="8"><li>initApplicationEventMulticaster()</li></ol> <p>主要作用：Initialize event multicaster for this context. 为此上下文初始化事件多播。初始化事件派发器；</p> <div class="language- extra-class"><pre class="language-text"><code>a). 获取BeanFactory
+b). 从BeanFactory中获取applicationEventMulticaster的ApplicationEventMulticaster；
+c). 如果上一步没有配置；创建一个SimpleApplicationEventMulticaster
+d). 将创建的ApplicationEventMulticaster添加到BeanFactory中，以后其他组件直接自动注入
+</code></pre></div><ol start="9"><li>onRefresh()</li></ol> <p>主要作用：Initialize other special beans in specific context subclasses. 初始化特定上下文子类中的其他特殊bean。</p> <p>具体实现为空。</p> <div class="language- extra-class"><pre class="language-text"><code>a). 子类重写这个方法，在容器刷新的时候可以自定义逻辑；
+</code></pre></div><ol start="10"><li>registerListeners()</li></ol> <p>主要作用：Check for listener beans and register them. 检查侦听器bean并注册它们。给容器中将所有项目里面的ApplicationListener注册进来；</p> <div class="language- extra-class"><pre class="language-text"><code>a). 从容器中拿到所有的ApplicationListener
+
+b). 将每个监听器添加到事件派发器中；
+    getApplicationEventMulticaster().addApplicationListenerBean(listenerBeanName);
+
+c). 派发之前步骤产生的事件；
+</code></pre></div><ol start="11"><li>finishBeanFactoryInitialization(beanFactory)</li></ol> <p>主要功能：Instantiate all remaining (non-lazy-init) singletons.实例化所有剩余的（非惰性初始化）单例。初始化所有剩下的单实例bean；</p> <div class="language- extra-class"><pre class="language-text"><code>a). beanFactory.preInstantiateSingletons();初始化后剩下的单实例bean
+
+b). 获取剩余的bean实例，非抽象的，是单例的，非懒加载的。
+
+c). 如果是工厂类，则 前缀+&amp; 获取工厂类，根据条件调用getBean获取实例对象。
+
+d). 非工厂类，直接调用getBean获取实例对象。
+
+e) 最终会走到 AbstractAutowireCapableBeanFactory#createBean() 和 doCreateBean() 方法。
+</code></pre></div><p>createBean 逻辑：</p> <div class="language- extra-class"><pre class="language-text"><code>
+1）、createBean(beanName, mbd, args);
+2）、Object bean = resolveBeforeInstantiation(beanName, mbdToUse);让BeanPostProcessor先拦截返回代理对象；
+    【InstantiationAwareBeanPostProcessor】：提前执行；
+    先触发：postProcessBeforeInstantiation()；
+    如果有返回值：触发postProcessAfterInitialization()；
+3）、如果前面的InstantiationAwareBeanPostProcessor没有返回代理对象；调用4）
+4）、Object beanInstance = doCreateBean(beanName, mbdToUse, args);创建Bean
+        1）、【创建Bean实例】；createBeanInstance(beanName, mbd, args);
+        利用工厂方法或者对象的构造器创建出Bean实例；
+        2）、applyMergedBeanDefinitionPostProcessors(mbd, beanType, beanName);
+        调用MergedBeanDefinitionPostProcessor的postProcessMergedBeanDefinition(mbd, beanType, beanName);
+        3）、【Bean属性赋值】populateBean(beanName, mbd, instanceWrapper);
+        赋值之前：
+            1）、拿到InstantiationAwareBeanPostProcessor后置处理器；
+                postProcessAfterInstantiation()；
+            2）、拿到InstantiationAwareBeanPostProcessor后置处理器；
+                postProcessPropertyValues()；
+            =====赋值之前：===
+            3）、应用Bean属性的值；为属性利用setter方法等进行赋值；
+                applyPropertyValues(beanName, mbd, bw, pvs);
+        4）、【Bean初始化】initializeBean(beanName, exposedObject, mbd);
+            1）、【执行Aware接口方法】invokeAwareMethods(beanName, bean);执行xxxAware接口的方法
+                BeanNameAware\BeanClassLoaderAware\BeanFactoryAware
+            2）、【执行后置处理器初始化之前】applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+                BeanPostProcessor.postProcessBeforeInitialization（）;
+            3）、【执行初始化方法】invokeInitMethods(beanName, wrappedBean, mbd);
+                1）、是否是InitializingBean接口的实现；执行接口规定的初始化；
+                2）、是否自定义初始化方法；
+            4）、【执行后置处理器初始化之后】applyBeanPostProcessorsAfterInitialization
+                BeanPostProcessor.postProcessAfterInitialization()；
+        5）、注册Bean的销毁方法；
+5）、将创建的Bean添加到缓存中singletonObjects；
+
+</code></pre></div><p>此处使用了三级缓存来解决循环依赖。</p> <ol start="12"><li>finishRefresh()</li></ol> <p>a). clearResourceCaches</p> <p>清除上下文级别的资源缓存（例如来自扫描的ASM元数据）。</p> <p>b). initLifecycleProcessor</p> <p>初始化和生命周期有关的后置处理器；LifecycleProcessor
+默认从容器中找是否有lifecycleProcessor的组件【LifecycleProcessor】；如果没有new DefaultLifecycleProcessor();
+加入到容器；</p> <p>写一个LifecycleProcessor的实现类，可以在BeanFactory
+void onRefresh();
+void onClose();</p> <p>c). getLifecycleProcessor().onRefresh();
+拿到前面定义的生命周期处理器（BeanFactory）；回调onRefresh()；</p> <p>d). publishEvent(new ContextRefreshedEvent(this));发布容器刷新完成事件；</p> <p>e). liveBeansView.registerApplicationContext(this);</p> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <div class="language- extra-class"><pre class="language-text"><code>1）、Spring容器在启动的时候，先会保存所有注册进来的Bean的定义信息；
+    1）、xml注册bean；&lt;bean&gt;
+    2）、注解注册Bean；@Service、@Component、@Bean、xxx
+2）、Spring容器会合适的时机创建这些Bean
+    1）、用到这个bean的时候；利用getBean创建bean；创建好以后保存在容器中；
+    2）、统一创建剩下所有的bean的时候；finishBeanFactoryInitialization()；
+3）、后置处理器；BeanPostProcessor
+    1）、每一个bean创建完成，都会使用各种后置处理器进行处理；来增强bean的功能；
+        AutowiredAnnotationBeanPostProcessor:处理自动注入
+        AnnotationAwareAspectJAutoProxyCreator:来做AOP功能；
+        xxx....
+        增强的功能注解：
+        AsyncAnnotationBeanPostProcessor
+        ....
+4）、事件驱动模型；
+    ApplicationListener；事件监听；
+    ApplicationEventMulticaster；事件派发：
+</code></pre></div><h2 id="spring-生命周期"><a href="#spring-生命周期" class="header-anchor">#</a> spring 生命周期</h2> <ol><li><p>实例化BeanFactoryPostProcessor实现类  对应上面的第5步</p></li> <li><p>执行BeanFactoryPostProcessor的postProcessBeanFactory方法  对应上面的第5步</p></li> <li><p>实例化 BeanPostProcesspr实现类    对应上面的第6步</p></li> <li><p>实例化 InstantiationAwareBeanPostProcessorAdapter实现类   对应上面的第6步</p></li> <li><p>执行 InstantiationAwareBeanPostProcessor 的 postProcessorBeforeInstantiation 方法   对应上面的第11步</p></li> <li><p>执行bean的构造器     对应上面的第11步</p></li> <li><p>执行 InstantiationAwareBeanPostProcessor 的 postProcessAfterInstantiation 方法   对应上面的第11步</p></li> <li><p>执行 InstantiationAwareBeanPostProcessor 的 postProcessPropertyValues 方法     对应上面的第11步</p></li> <li><p>为Bean注入属性     对应上面的第11步</p></li> <li><p>调用 BeanNameAware的setBeanName方法     对应上面的第11步  初始化之前 initializeBean 组开始阶段</p></li> <li><p>调用 BeanFactoryAware 的setBeanFactory方法     对应上面的第11步</p></li> <li><p>执行 BeanPostProcessor 的 postProcessorBeforeInstantiation 方法   对应上面的第11步</p></li> <li><p>调用InitializingBean的afterPropertiesSet方法，进行初始化，调用初始化方法   对应上面的第11步</p></li> <li><p>执行 BeanPostProcessor 的 postProcessorAfterInstantiation 方法    对应上面的第11步</p></li> <li><p>初始化成功   对应上面的第11步</p></li> <li><p>调用 DiposibleBean 的 destroy方法。调用销毁方法。</p></li></ol> <h3 id="如何解决循环依赖"><a href="#如何解决循环依赖" class="header-anchor">#</a> 如何解决循环依赖</h3> <p>无法解决构造器的循环依赖问题。</p> <p>private final Map&lt;String, Object&gt; singletonObjects = new ConcurrentHashMap&lt;&gt;(256); //一级缓存  用于存放完全初始化好的 bean，从该缓存中取出的 bean 可以直接使用</p> <p>private final Map&lt;String, Object&gt; earlySingletonObjects = new HashMap&lt;&gt;(16); // 二级缓存    提前曝光的单例对象的cache，存放原始的 bean 对象（尚未填充属性），用于解决循环依赖      从三级缓存获取，并从三级缓存剪切到二级缓存</p> <p>private final Map&lt;String, ObjectFactory&lt;?&gt;&gt; singletonFactories = new HashMap&lt;&gt;(16); // 三级缓存    单例对象工厂的cache，存放 bean 工厂对象，用于解决循环依赖    创建构造函数完成后就会加入</p> <p>// 这个缓存也十分重要：它表示bean创建过程中都会在里面呆着~
+// 它在Bean开始创建时放值，创建完成时会将其移出~
+private final Set<String> singletonsCurrentlyInCreation = Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;(16));   调用创建方法之前就会加入</String></p> <p>// 至少被创建了一次的 都会放进这里~~~~
+private final Set<String> alreadyCreated = Collections.newSetFromMap(new ConcurrentHashMap&lt;&gt;(256));</String></p> <p>先从一级缓存singletonObjects中去获取。（如果获取到就直接return）</p> <p>如果获取不到或者对象正在创建中（isSingletonCurrentlyInCreation()），那就再从二级缓存earlySingletonObjects中获取。（如果获取到就直接return）</p> <p>如果还是获取不到，且允许singletonFactories（allowEarlyReference=true）通过getObject()获取。就从三级缓存singletonFactory.getObject()获取。（如果获取到了就从singletonFactories中移除，并且放进earlySingletonObjects。其实也就是从三级缓存移动（是剪切、不是复制哦~）到了二级缓存）</p> <p>A依赖于B，B依赖于A，整体流程如下：</p> <p>创建A实例，先将 A 加入singletonsCurrentlyInCreation，然后创建构造方法，然后将其加入 singletonFactories，后续对 A进行值设置。</p> <p>A设置B的过程中，发现B不存在，从三个缓存中都获取不到。所以需要创建B的实例</p> <p>开始创建B的实例，将B加入 singletonsCurrentlyInCreation，然后创建构造方法，然后将其加入 singletonFactories，后续对 B进行设置值设置。</p> <p>从一级缓存，获取不到，从二级缓存也获取不到，但是从三级缓存中获取到了，将A移除于 singletonFactories ， 加入到 earlySingletonObjects。所以能获取到A，并给B设置值。B最后创建完成，所以最后B 加入到 singletonObjects， 移除 singletonFactories 。</p> <p>将创建的B返回到 A设置值时的情况。则此时A设置值成功。因此A 也成功创建了。最后A加入到singletonObjects，移除 earlySingletonObjects。</p> <h2 id="相关定义"><a href="#相关定义" class="header-anchor">#</a> 相关定义</h2> <h3 id="beandefinition"><a href="#beandefinition" class="header-anchor">#</a> BeanDefinition</h3> <p>BeanDefinition表示Bean定义，Spring根据BeanDefinition来创建Bean对象，BeanDefinition有很多的属性用来          描述Bean，BeanDefinition是Spring中非常核心的概念。</p> <p>重要属性：beanClass，scope，isLazy，dependsOn，primary，initMethodName。</p> <p>beanClass表示bean的类型，Spring在创建Bean的过程中会根据此属性来实例化得到对象。</p> <p>scope 表示bean的作用域，singleton表示单例bean，prototype表示一个原型bean。</p> <p>isLazy 表示一个类是否需要懒加载，原型bean的isLazy属性不起作用，懒加载的单例bean，会在第一次getBean的时候生成该bean，非懒加载的单例bean，则会在Spring启动过程中直接生成好。</p> <p>dependsOn 表示一个bean在创建之前所依赖的其他bean，在一个bean创建之前，它所依赖的这些bean得先全部创建好。</p> <p>primary 表示一个bean是主bean，防止一个bean存在多个实例，导致spring不知道该如何选择。</p> <p>initMethodName 表示一个bean的初始化方法。生命周期过程中有一个步骤叫做初始化，会在这个步骤中去调用bean的初始化方法。</p> <h3 id="beanfactory"><a href="#beanfactory" class="header-anchor">#</a> BeanFactory</h3> <p>BeanFactory是一种&quot;Spring容器&quot;，就是Bean工厂，可以用来创建Bean，获取Bean。</p> <p>BeanFactory将利用BeanDefinition来生成Bean对象，BeanDefinition相当于BeanFactory的原材料，Bean对象就相当于BeanFactory所生产出来的产品。</p> <p>BeanFactory的实现中，DefaultListableBeanFactory的功能：支持单例Bean，支持Bean别名，支持父子BeanFactory，支持Bean类型转化，支持Bean后置处理，支持FactoryBean，支持自动装配，等等。</p> <h3 id="factorybean"><a href="#factorybean" class="header-anchor">#</a> FactoryBean</h3> <p>FactoryBean是Spring所提供的一种较灵活的创建Bean的方式，可以通过实现FactoryBean接口中的getObject()方法来返回一个对象，这个对象就是最终的Bean对象。</p> <p>FactoryBean对象本身也是一个Bean，同时相当于一个小型工厂，可以生产出另外的Bean</p> <h3 id="applicationcontext"><a href="#applicationcontext" class="header-anchor">#</a> ApplicationContext</h3> <p>ApplicationContext是比BeanFactory更加强大的Spring容器，它既可以创建bean，获取bean，还支持国际化，事件广播，获取资源等BeanFactory不具备的功能。</p> <p>继承了 EnvironmentCapable 这个接口，拥有了获取环境变量的功能，可以通过ApplicationContext获取操作系统环境变量和JVM环境变量。</p> <p>继承了 ListableBeanFactory 这个接口，拥有了获取所有beanNames，判断某个beanName是否存在 beanDefinition对象，统计 BeanDefinition个数，获取某个类型对应的所有 beanNames等功能。</p> <p>继承了 HierarchicalBeanFactory 接口，拥有了获取父 BeanFactory，判断某个name是否存在bean对象的功能。</p> <p>继承了 MessageSource 接口，拥有了国际化功能，可以直接利用 MessageSource对象获取某个国际化资源。</p> <p>继承了 ApplicationEventPublisher 接口，拥有了事件发布功能，可以发布事件。</p> <p>继承了 ApplicationContext 接口，拥有了加载并获取资源的功能。</p> <h3 id="beanpostprocessor"><a href="#beanpostprocessor" class="header-anchor">#</a> BeanPostProcessor</h3> <p>BeanPostProcessor 是Spring提供的一种扩展机制，可以利用该机制对Bean进行定制化加工，在Spring底层源码实现中，也广泛的用到了该机制，通常也叫做Bean后置处理器。</p> <p>postProcessBeforeInitialization(): 初始化前方法，表示可以利用这个方法来对Bean在初始化前进行自定义加工。</p> <p>postProcessAfterInitialization(): 初始化后方法，表示可以利用这个方法来对Bean在初始化后进行自定义加工。</p> <h2 id="springmvc-运行原理"><a href="#springmvc-运行原理" class="header-anchor">#</a> SpringMVC 运行原理</h2> <p>a). 发送请求</p> <p>b). DispatcherServlet找到匹配的HandlerMapping，解析请求对应的Handler</p> <p>c). 调用适配器进行处理</p> <p>d). 适配器根据Handler调用真正的处理器开始处理请求，并处理相应的业务逻辑</p> <p>e). 处理器处理完业务后，会返回一个ModelAndView对象</p> <p>f). ViewResolver根据View查找实际的View</p> <p>g). DispatcherServlet把返回的Model传递给View</p> <p>h). 返回请求。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021-09-22 21:05:43</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.e5db9849.js" defer></script><script src="/assets/js/3.ed8c06e7.js" defer></script><script src="/assets/js/1.9e75a2be.js" defer></script><script src="/assets/js/42.05bdc65e.js" defer></script>
+  </body>
+</html>

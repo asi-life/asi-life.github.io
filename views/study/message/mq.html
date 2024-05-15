@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【消息队列】Kafka，RabbitMQ, RocketMQ基础介绍 | 差不多的贝壳</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.ico">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script language="javascript" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+    <meta name="description" content="【消息队列】Kafka，RabbitMQ, RocketMQ基础介绍">
+    <meta name="Kafka，RabbitMQ, RocketMQ基础介绍" content="Kafka，RabbitMQ, RocketMQ基础介绍">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/0.styles.98698290.css" as="style"><link rel="preload" href="/assets/js/app.e5db9849.js" as="script"><link rel="preload" href="/assets/js/3.ed8c06e7.js" as="script"><link rel="preload" href="/assets/js/1.9e75a2be.js" as="script"><link rel="preload" href="/assets/js/37.9156b580.js" as="script"><link rel="prefetch" href="/assets/js/10.dcd742d7.js"><link rel="prefetch" href="/assets/js/11.9e8caa91.js"><link rel="prefetch" href="/assets/js/12.5acc7bfe.js"><link rel="prefetch" href="/assets/js/13.64c27640.js"><link rel="prefetch" href="/assets/js/14.d7c2c7ad.js"><link rel="prefetch" href="/assets/js/15.57c5ac2c.js"><link rel="prefetch" href="/assets/js/16.378ffe0f.js"><link rel="prefetch" href="/assets/js/17.89b3d75d.js"><link rel="prefetch" href="/assets/js/18.08a58208.js"><link rel="prefetch" href="/assets/js/19.0b8c12f8.js"><link rel="prefetch" href="/assets/js/20.438d1ec1.js"><link rel="prefetch" href="/assets/js/21.360c7dad.js"><link rel="prefetch" href="/assets/js/22.886d59ab.js"><link rel="prefetch" href="/assets/js/23.36693c07.js"><link rel="prefetch" href="/assets/js/24.c203effa.js"><link rel="prefetch" href="/assets/js/25.d0b49f35.js"><link rel="prefetch" href="/assets/js/26.0bd0b751.js"><link rel="prefetch" href="/assets/js/27.1ead41b5.js"><link rel="prefetch" href="/assets/js/28.8c71231e.js"><link rel="prefetch" href="/assets/js/29.0e91ba17.js"><link rel="prefetch" href="/assets/js/30.ba3f7ee4.js"><link rel="prefetch" href="/assets/js/31.a5aa6b4a.js"><link rel="prefetch" href="/assets/js/32.0180d8a3.js"><link rel="prefetch" href="/assets/js/33.1689da57.js"><link rel="prefetch" href="/assets/js/34.40068ec9.js"><link rel="prefetch" href="/assets/js/35.d45fa313.js"><link rel="prefetch" href="/assets/js/36.116b7de3.js"><link rel="prefetch" href="/assets/js/38.64581f9c.js"><link rel="prefetch" href="/assets/js/39.e9338707.js"><link rel="prefetch" href="/assets/js/4.c3d42842.js"><link rel="prefetch" href="/assets/js/40.73109616.js"><link rel="prefetch" href="/assets/js/41.1b147abb.js"><link rel="prefetch" href="/assets/js/42.05bdc65e.js"><link rel="prefetch" href="/assets/js/43.8854147b.js"><link rel="prefetch" href="/assets/js/44.170947a8.js"><link rel="prefetch" href="/assets/js/45.47f74164.js"><link rel="prefetch" href="/assets/js/5.d57156ee.js"><link rel="prefetch" href="/assets/js/6.bd4ca3cb.js"><link rel="prefetch" href="/assets/js/7.fadd64b2.js"><link rel="prefetch" href="/assets/js/8.edf6ba42.js"><link rel="prefetch" href="/assets/js/9.9cbd478f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.98698290.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>差不多的贝壳</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>差不多的贝壳</span>
+            
+          <span data-v-64685f0e>2021 - </span>
+          2024
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.jpg" alt="差不多的贝壳" class="logo"> <span class="site-name">差不多的贝壳</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/人生第一次/" class="nav-link"><i class="iconfont undefined"></i>
+  人生第一次
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="iconfont undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电影/" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/categories/宫崎骏/" class="nav-link"><i class="iconfont undefined"></i>
+  宫崎骏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电视剧/" class="nav-link"><i class="iconfont undefined"></i>
+  电视剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日剧/" class="nav-link"><i class="iconfont undefined"></i>
+  日剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活剧/" class="nav-link"><i class="iconfont undefined"></i>
+  生活剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/袁隆平/" class="nav-link"><i class="iconfont undefined"></i>
+  袁隆平
+</a></li><li class="dropdown-item"><!----> <a href="/categories/国士无双/" class="nav-link"><i class="iconfont undefined"></i>
+  国士无双
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/操作系统/" class="nav-link"><i class="iconfont undefined"></i>
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/动漫/" class="nav-link"><i class="iconfont undefined"></i>
+  动漫
+</a></li><li class="dropdown-item"><!----> <a href="/categories/故事/" class="nav-link"><i class="iconfont undefined"></i>
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="/categories/婚姻/" class="nav-link"><i class="iconfont undefined"></i>
+  婚姻
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="iconfont undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试题/" class="nav-link"><i class="iconfont undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息队列/" class="nav-link"><i class="iconfont undefined"></i>
+  消息队列
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Photoshop/" class="nav-link"><i class="iconfont undefined"></i>
+  Photoshop
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网络编程/" class="nav-link"><i class="iconfont undefined"></i>
+  网络编程
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/框架/" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/近日总结/" class="nav-link"><i class="iconfont undefined"></i>
+  近日总结
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="/logo.jpg" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    差不多的贝壳
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>34</h3> <h6 data-v-ca798c94>文章</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>38</h3> <h6 data-v-ca798c94>标签</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      分类
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/人生第一次/" class="nav-link"><i class="iconfont undefined"></i>
+  人生第一次
+</a></li><li class="dropdown-item"><!----> <a href="/categories/书籍/" class="nav-link"><i class="iconfont undefined"></i>
+  书籍
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活/" class="nav-link"><i class="iconfont undefined"></i>
+  生活
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电影/" class="nav-link"><i class="iconfont undefined"></i>
+  电影
+</a></li><li class="dropdown-item"><!----> <a href="/categories/宫崎骏/" class="nav-link"><i class="iconfont undefined"></i>
+  宫崎骏
+</a></li><li class="dropdown-item"><!----> <a href="/categories/电视剧/" class="nav-link"><i class="iconfont undefined"></i>
+  电视剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/日剧/" class="nav-link"><i class="iconfont undefined"></i>
+  日剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/生活剧/" class="nav-link"><i class="iconfont undefined"></i>
+  生活剧
+</a></li><li class="dropdown-item"><!----> <a href="/categories/袁隆平/" class="nav-link"><i class="iconfont undefined"></i>
+  袁隆平
+</a></li><li class="dropdown-item"><!----> <a href="/categories/国士无双/" class="nav-link"><i class="iconfont undefined"></i>
+  国士无双
+</a></li><li class="dropdown-item"><!----> <a href="/categories/学习/" class="nav-link"><i class="iconfont undefined"></i>
+  学习
+</a></li><li class="dropdown-item"><!----> <a href="/categories/操作系统/" class="nav-link"><i class="iconfont undefined"></i>
+  操作系统
+</a></li><li class="dropdown-item"><!----> <a href="/categories/动漫/" class="nav-link"><i class="iconfont undefined"></i>
+  动漫
+</a></li><li class="dropdown-item"><!----> <a href="/categories/故事/" class="nav-link"><i class="iconfont undefined"></i>
+  故事
+</a></li><li class="dropdown-item"><!----> <a href="/categories/婚姻/" class="nav-link"><i class="iconfont undefined"></i>
+  婚姻
+</a></li><li class="dropdown-item"><!----> <a href="/categories/java/" class="nav-link"><i class="iconfont undefined"></i>
+  java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/面试题/" class="nav-link"><i class="iconfont undefined"></i>
+  面试题
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Java/" class="nav-link"><i class="iconfont undefined"></i>
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/categories/中间件/" class="nav-link"><i class="iconfont undefined"></i>
+  中间件
+</a></li><li class="dropdown-item"><!----> <a href="/categories/消息队列/" class="nav-link"><i class="iconfont undefined"></i>
+  消息队列
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Photoshop/" class="nav-link"><i class="iconfont undefined"></i>
+  Photoshop
+</a></li><li class="dropdown-item"><!----> <a href="/categories/网络编程/" class="nav-link"><i class="iconfont undefined"></i>
+  网络编程
+</a></li><li class="dropdown-item"><!----> <a href="/categories/数据库/" class="nav-link"><i class="iconfont undefined"></i>
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/categories/框架/" class="nav-link"><i class="iconfont undefined"></i>
+  框架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/redis/" class="nav-link"><i class="iconfont undefined"></i>
+  redis
+</a></li><li class="dropdown-item"><!----> <a href="/categories/近日总结/" class="nav-link"><i class="iconfont undefined"></i>
+  近日总结
+</a></li><li class="dropdown-item"><!----> <a href="/categories/Zookeeper/" class="nav-link"><i class="iconfont undefined"></i>
+  Zookeeper
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  标签
+</a></div><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  首页
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  时间轴
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-message"></i>
+      关于
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/views/message-board.html" class="nav-link"><i class="iconfont reco-suggestion"></i>
+  留言板
+</a></li></ul></div></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>【消息队列】Kafka，RabbitMQ, RocketMQ基础介绍</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>差不多的贝壳</span>
+            
+          <span data-v-64685f0e>2021 - </span>
+          2024
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">【消息队列】Kafka，RabbitMQ, RocketMQ基础介绍</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>差不多的贝壳</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2021-09-18</span></i> <i class="iconfont reco-eye" data-v-3b7f5bdf><span id="/views/study/message/mq.html" data-flag-title="Your Article Title" class="leancloud-visitors" data-v-3b7f5bdf><a class="leancloud-visitors-count" style="font-size:.9rem;font-weight:normal;color:#999;"></a></span></i> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>消息队列</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="常用的消息中间件"><a href="#常用的消息中间件" class="header-anchor">#</a> 常用的消息中间件</h2> <ol><li>Kafka</li></ol> <p>kafka的吞吐量几乎是行业里最优秀的。</p> <p>性能高，发消息给kakfa是毫秒级的。可用性也很高，支持集群部署。</p> <p>存在丢数据的情况：kafka收到消息后会写入一个磁盘缓冲区，并没有直接落地到物理磁盘上，机器本身故障，可能会导致磁盘缓冲区里的数据丢失。</p> <p>功能单一。主要用于收数据，发数据。把Kafka用在用户行为日志的采集和传输上，用于大数据。</p> <ol start="2"><li>RabbitMQ</li></ol> <p>rabbitMQ优势在于保证数据不丢失，保证高可用性，集群部署的时候部分机器宕机可以继续运行，支持部分高级功能，如死信队列，消息重试等。</p> <p>吞吐量比较低，一般就是每秒几万的级别，遇到特别特别高并发的情况下，支撑起来很困难。</p> <p>对其进行集群扩展，比较麻烦。</p> <p>且开发语言是erlang.</p> <ol start="3"><li>RocketMq</li></ol> <p>RocketMQ的吞吐量同样很高，单机可以达到10万QPS，保证高可用，而且支持通过配置保证数据不丢失，可以部署大规模集群，还支持各种高级的功能。比如延迟消息，事务消息，消息回溯，死信队列，消息积压等等。</p> <p>基于java开发。</p> <h3 id="rocketmq"><a href="#rocketmq" class="header-anchor">#</a> RocketMQ</h3> <p>RocketMQ主要包含四个核心部分：</p> <p>a). 第一块是 NameServer. 负责管理集群中所有Broker信息。让使用MQ的系统可以通过他感知到集群里面有哪些Broker</p> <p>b). 第二块就是 Broker 集群本身</p> <p>c). 第三块就是 MQ发送消息的那些系统了，一般称为生产者。</p> <p>d). 第四块就是 MQ处理消息的那些系统了，一般称为消费组。</p> <ol><li>NameServer</li></ol> <p>NameServer可以部署多台机器，集群部署，保证高可用。</p> <p>每个Broker启动都得向所有的NameServer进行注册。同时每隔30秒向NameServer发送心跳信息，如果没有发送了，NameServer能感知到相关Broker已经挂掉。</p> <p>每个系统每隔一段时间，定时发送请求到NameServer取拉取最新的集群Broker信息。</p> <ol start="2"><li>Broker</li></ol> <p>对于主从的Broker，两个Broker都会启动时向NameServer进行注册，同时每30秒发送心跳，采用TCP长连接。</p> <p>而从Broker会不停的向主Broker去拉取消息。Master-Slave模式采取的是Pull模式拉取消息。</p> <p>消费者的系统在获取消息是，可能会从Mater Broker获取消息，也有可能从Slave Broker获取消息。</p> <p>4.5版本之前，如果运行过程中Master Broker挂了，Slave没法自动切换成Master的。没法自动进行切换。</p> <p>所以在4.5之后，出现了叫Dledger的机制实现RocketMQ的高可用自动切换。通过Dledge技术和Raft协议算法进行leader选举，直接将一个Slave Broker选举为新的Master Broker。</p> <ol start="3"><li>MQ的核心数据模型</li></ol> <p>TOPIC：主要表达意思为数据集合的意思</p> <ol start="4"><li>RocketMQ：可视化管理界面</li></ol> <p>对RocketMQ的rocketmq-console进行打包部署即可。</p> <ol start="5"><li>RocketMQ集群进行OS内核参数的调整</li></ol> <p>a). vm.overcommit_memory</p> <p>有三个值可选：</p> <p>0: 中间件系统申请内存的时候，os内核会检查内存是否够用。判断为不够，就会导致中间件系统异常出错。</p> <p>1：把所有可用的物理内存都分配给你，只要有内存就给你来用，避免申请内存失败问题。</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">echo</span> <span class="token string">'vm.overcommit_memory=1'</span> <span class="token operator">&gt;&gt;</span> /etc/sysctl.conf
+</code></pre></div><p>b). vm.max_map_count</p> <p>影响中间件系统可以开启的线程数量。</p> <p>c). vm.swappiness</p> <p>控制进程的swap行为，就是os会把一部分磁盘空间作为swap区域。</p> <p>d). ulimit</p> <p>空间linux上的最大文件链接数的。</p> <ol start="6"><li>同步发送消息到RocketMQ</li></ol> <p>即将消息发送给RocketMQ然后等待返回。</p> <ol start="7"><li>异步发送消息到RocketMQ</li></ol> <div class="language-java extra-class"><pre class="language-java"><code><span class="token comment">// 设置异步发送失败的时候重试次数为0,将消息发送到topic时，增加</span>
+
+producer<span class="token punctuation">.</span><span class="token function">setRetryTimesWhenSendAsyncFailed</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+
+producer<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">SendCallBack</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onSuccess</span><span class="token punctuation">(</span><span class="token class-name">SendResult</span> sendResult<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token class-name">OnException</span><span class="token punctuation">(</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>将消息发送给RocketMQ时，直接将消息发送过去，不需要等待结果返回，就会继续往下走。同时后续会回调SendCallback里面的函数。</p> <ol start="8"><li>发送单向消息</li></ol> <div class="language-java extra-class"><pre class="language-java"><code>producer<span class="token punctuation">.</span><span class="token function">sendOneway</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>消息发送，不关注是否发送成功。</p> <ol start="9"><li>push消费模式</li></ol> <p>Broker会主动把消息发送给你的消费者。</p> <ol start="10"><li>pull消费模式</li></ol> <p>Broker不会主动推送消息给Consumer，消费者主动发送请求到Broker去拉取消息。</p> <ol start="11"><li>RocketMQ生产者工作原理</li></ol> <p>a). 创建Topic的时候指定MessageQueue数量</p> <p>即这个Topic对应了多少个队列。</p> <ol start="12"><li>Topic，MessageQueue以及Broker之间的关系</li></ol> <p>每个Topic的数据都是分布式存储在多个Broker中，而Topic有几个MessageQueue, MessageQueue存在于Topic中。</p> <ol start="13"><li>生产者发送消息的时候写入哪个MessageQueue</li></ol> <p>生产者会根据NameServer进行通信获取Topic的路由数据。所以生产者从NameServer中就会知道，一个Topic有几个MessageQueue，那些MessageQueue在哪台Broker汲取上，哪些MessageQueue在另外一台Broker机器上。根据策略进行发送message。</p> <ol start="14"><li>如果某个Broker出现故障怎么办</li></ol> <p>produce中增加 sendLatencyFaultEnable开关，开启以后会有一个容错机制，某次访问发现存在网络延迟，就会自动回避访问这个Broker一段时间。</p> <ol start="15"><li>CommitLog消息顺序的写入机制</li></ol> <p>通过CommitLog进行消息的存储，每隔文件限定1GB，Broker收到消息之后就直接追加写入这个文件的末尾。如果超过1GB就会创建一个新的CommitLog文件。</p> <ol start="16"><li>MessageQueue在数据存储中体现在哪里</li></ol> <p>对Topic下的每个MessageQueue都会有一系列的ConsumeQueue文件。</p> <p>$HOME/store/consumequeue/{topic}/{queueId}/{fileName}</p> <p>其中{topic}代指某个topic，{queueId}代指某个MessageQueue。</p> <p>同时对存储这台Broker机器上的Topic下的一个MessageQueue，他有很多的ConsumeQueue文件，这个ConsumeQueue文件里存储的是一条消息对应在CommitLog文件中的offset偏移量。</p> <ol start="17"><li>如何让消息写入CommitLog文件近乎内存写性能的</li></ol> <p>Broker是基于OS操作系统的PageCache和顺序写的两个机制，来提升写入CommitLog文件的性能的。</p> <p>顺序写就是不停的在文件末尾进行消息的追加。</p> <p>数据写入CommitLog文件的时候，不是直接写入底层的物理文件的，而是先进入OS的PageCache内存缓存中，然后后续由OS的后台线程选一个时间，异步化的将OS PageCache内存缓冲中的数据刷入底层的磁盘文件。</p> <ol start="18"><li>同步刷盘和异步刷盘</li></ol> <p>生产者把消息发送给Broker，Broker将消息写入OS PageCache中，就直接返回ACK给生产者了。这就是异步刷盘，可能会导致刷入内存的部分信息丢失。</p> <p>生产者发送一条消息出去，broker收到了消息，必须直接强制把这个消息刷入底层的物理磁盘文件中，然后才会返回ack给producer。这叫同步刷盘。会导致消息写入吞吐量急剧下降，但可以保证数据不丢失。</p> <ol start="19"><li>DLedger是如何基于Raft协议选举LeaderBroker的</li></ol> <p>首先多台机器通过投票选择一个leader，但是第一次都会投自己，所以无法选举。后续对每个Broker进行随机沉睡，谁先醒来，就会选举自己，将信息发给其他broker，其他boker正好的醒来时收到了信息，则也会选择该Broker。如此重复多次后，当一个broker的选取数超过了n/2+1则被选择为master。</p> <ol start="20"><li>DLedger是如何基于Raft协议进行多副本同步的</li></ol> <p>主要分为两个阶段：一个为uncommitted，一个是committed阶段。</p> <p>Leader Broker上的DLedger收到一条数据之后，会标记为uncommitted状态，然后会通过自己的DLedgerServer组件把这个uncommitted数据发送给Follower Broker的DLedgerServer。</p> <p>接着Follower Broker的DLegerServer收到uncommitted消息之后，必须返回一个ack给Leader Broker的DLedgerServer，然后如果Leader Broker收到超过半数的Follower Broker返回ack之后，就会将消息标记为committed状态。</p> <p>然后Leader Broker上的DLedgerServer就会发送commited消息给Follower Broker机器的DLedgerServer，让他们也把消息标记为comitted状态。</p> <ol start="21"><li>如果Leader Broker崩溃了怎么办</li></ol> <p>如果Leader Broker挂了，剩下的两个Follow Broker就会重新发起选举，就会基于DLedger还是采用Raft协议算法，去选举出一个新的Leader Broker继续对外提供服务，而且会对没有完成的数据同步进行一些恢复性的操作，保证数据不会丢失。</p> <ol start="22"><li>消费组到底是什么</li></ol> <p>即给消费者取一个名字，如果消息被发送到MQ，那么每个组都会拉去到这条消息，且同一个消费组有多台机器的话，只有一台机器会获取到这条消息。</p> <ol start="23"><li>集群模式消费和广播模式消费。</li></ol> <p>默认情况下是集群模式。</p> <p>即：一个消费组获取到一条消息，只会交给组内的一台机器去处理，不是每条机器都获取到这条消息。</p> <p>广播模式是对于一个消费组获取到的一条消息，组内每台机器都可以获取到这条消息。</p> <ol start="24"><li>MessageQueue与消费者的关系</li></ol> <p>一个消费者中的多台机器是如何消费MessageQueue的。会均匀的将MessageQueue分配给消费组的多台机器来消费。</p> <ol start="25"><li>Push模式 和 Pull模式</li></ol> <p>两个消费模式的本质是一样的，都是消费者机器主动发送请求到Broker机器去拉取一批消息下来。</p> <p>Pull模式的代码相对复杂繁琐。而Pshu模式底层本身就是基于消息拉取的方式做的，且消息时效性更好。</p> <p>Push模式下：当请求发送到Broker，没有新的消息需要处理的时候，会让请求线程挂起，默认挂起15秒，这个期间会有后台线程每隔一会儿去检查是否有新的消息给你。</p> <ol start="26"><li>Broker是如何将消息读取出来返回给消费者的。</li></ol> <p>主要是通过ConsumerQueue和CommitLog</p> <p>一个消费者机器发送了拉取请求到Broker，要拉取MessageQueue0中的消息。Broker就会找到MessageQueue0对应的ConsumQueue0，从里面找到第一条消息的offset。</p> <p>接着Broker就需要根据ConsumeQueue0中找到第一条消息的地址，去CommitLog中根据这个offset地址去读取出来这条消息的数据，然后把这条消息的数据给消费者。</p> <ol start="27"><li>消费者机器如何处理消息，进行ack以及提交消息进度</li></ol> <p>当处理完一批消息后，消费者机器就会提交我们目前的一个消费进度到Broker上去，然后Broker就会存储我们的消费进度。</p> <ol start="28"><li>如果消费者中出现宕机或者扩容机器，会怎么处理</li></ol> <p>会进入一个rabalance的环境，重新给各个消费机器分配他们要处理的MessageQueue。</p> <ol start="29"><li>ConsumeQueue文件也是基于os cache的</li></ol> <p>ConsumQueue会被大量的消费者发送的请求给高并发的读取，所以ConsumeQueue文件的读操作是非常频繁的，而且会极大的影响到消费者进行消息拉取的性能和消费吞吐量。</p> <p>所以Broker对ConsumeQueue文件同样是基于Os cache来进行优化的。</p> <p>同时操作系统存在优化机制，读取一个磁盘文件的时候，会自动把磁盘文件的一些数据缓存到os cache中。</p> <ol start="30"><li>CommitLog是基于os cache + 磁盘一起读取的</li></ol> <p>如果读取的是刚刚写入CommitLog的数据，大概率还停留在os cache中，可以顺利的从Os cache里读取CommitLog中的数据。</p> <p>如果读取的是比较早之前写入CommitLog的数据，早被刷入磁盘了，已经不再Os cache里，那么只能从磁盘的文件里读取了。</p> <ol start="31"><li>什么时候会从os cache读，什么时候会从磁盘读</li></ol> <p>消费者机器一直快读的在拉取和消费处理，紧紧的跟上了生产者写入broker的消费速率。那么几乎是在os cache中读取。</p> <p>如果broker的负载很高，拉取消息的速度很慢，或者你自己的消费者拉取到一批消息之后处理的时候性能很低，处理的速度很慢，很导致消费速率跟不上生产速率。</p> <ol start="32"><li>Master Broker什么时候会让你从Slave Broker拉取数据</li></ol> <p>主要是根据当前没拉取消息的数量和大小，以及最多可以存放在os cache内存里的消息的大小，如果没拉取的消息超过了最大能使用的内存的两，说明会频繁从磁盘加载数据，就让你从Slave broker去加载数据了。</p> <ol start="33"><li>RocketMQ如何基于Netty扩展出高性能网络通信架构的</li></ol> <p>a). Reactor主线程与长短连接</p> <p>作为Broker而言，会有一个Reactor主线程，负责监听一个网络端口。</p> <p>一个Producer想要跟Broker建立一个TCP长连接，保证建立一次连接后能长时间通信。</p> <p>b). Producer和Broker建立一个长连接</p> <p>建立一个长连接主要使用SocketChannel,通过Producer和Broker中的SocketChannel，这两个SocketChannel代表了两者间建立好了长连接。</p> <p>c). 基于Reactor线程池监听连接中的请求</p> <p>Reactor中有Reactor线程池，这个线程池里默认3个线程。Reactor主线程建立好的每个连接SocketChannel都会交给这个Reactor线程池里的其中一个线程去监听请求。</p> <p>d). 基于Worker线程池完成一系列准备工作</p> <p>Reactor线程从SocketChannel中读取出一个请求，这个请求在正式进行处理之前，必须要要先进行一些准备工作和预处理，比如SSL机密验证，编码解码，连接空闲检查，网络连接管理。</p> <p>这些工作由Worker线程池来完成。Reactor线程收到的这个请求会交给Worker线程池中的一个线程进行处理。</p> <p>e). 基于业务线程池完成请求的处理</p> <p>接下来要处理收到的消息，会把请求转交给SendMessage线程池。且这个SendMessage线程配置的越多，处理消息的吞吐量越高。</p> <ol start="34"><li>基于mmap内存映射实现磁盘文件的高性能读写</li></ol> <p>a). mmap: Broker读写磁盘文件的核心技术</p> <p>b). 传统文件IO操作的多次数据拷贝问题。</p> <p>传统文件IO情况下，首先会把磁盘数据读取到内核IO缓冲区中，然后再从内核IO缓冲区里面读取到用户进程私有空间里去。</p> <p>c). RocketMQ是如何基于mmap技术+page cache技术优化的</p> <p>RocketMQ底层对CommitLog，ConsumeQueue之类的磁盘的读写操作，基本上都会采用mmap技术来实现。</p> <p>具体是基于JDK NIO包下的MappedByteBuffer的map()函数。先将一个磁盘文件映射到内存中。(将物理上的磁盘文件的一些地址和用户进程私有空间的一些虚拟内存地址进行了一个映射)</p> <p>mmap技术在进行文件映射的时候，一般有大小限制，在1.5GB~2GB之间。</p> <p>d). 基于mmap技术+pagecache技术实现高性能的文件读写</p> <p>拿到虚拟内存地址，接着对MappedByteBuffer执行写入操作，写入的时候会直接进入PageCache中，然后过一段时间之后，由os的线程异步刷新到磁盘。</p> <p>而此过程只有一次的从PageCache里拷贝到磁盘文件里。</p> <p>e). 预映射机制 + 文件预热机制</p> <p>Broker针对磁盘文件高性能读写机制做了一些优化</p> <p>内存预映射机制：Broker会针对磁盘上的各种CommitLog，ConsumeQueue文件预先分配好MappedFile，也就是提前对一些可能接下来要写的磁盘文件提前使用MappedByteBuffer执行map()函数完成映射。</p> <p>文件预热：在提前对一些文件完成映射之后，因为映射不会直接将数据加载到内存里来，那么后续在读取CommitLog, ConsumeQueue的时候，可能频繁的从磁盘中加载数据到内存中去。所以其实在执行完map()函数之后，会进行madvise系统调用，尽可能多的把磁盘文件加载到内存中去。</p> <p>写磁盘文件的时候都是进入PageCache的，保证写入高性能；同时尽可能多的通过map + madvise的映射后预热机制，把磁盘文件里的数据尽可能多的加载到PageCache里来。</p> <ol start="35"><li>事务消息机制</li></ol> <p>a). 生产者在接收到请求后，先发送一条half消息</p> <p>b). RocketMQ返回half消息相应</p> <p>c). 更新事务的相关数据</p> <p>d). 给RocketMQ发送提交事务消息或者回滚信息</p> <p>e). Rocket回调接口判断消息的状态。</p> <ol start="36"><li>Broker消息零丢失方案：同步刷盘+Raft协议主从同步</li></ol> <p>a). 用了事务消息机制，消息就一定不会丢了嘛</p> <p>事务消息机制，保证了两个业务系统的数据一致性。</p> <p>但不保证数据不会丢失。异步同步盈眶下，很容易就丢失了。</p> <p>同时为了防止磁盘损坏，Broker使用主从同步机制。</p> <ol start="37"><li>Consumer消息零丢失方案：手动提交offset + 自动故障转移</li></ol> <p>获取消息后，不立刻进行提交，而是等待所有事件处理完后再提交offset, 返回ConsumeConcurrentlyStatus.CONSUME_SUCCESS。</p> <ol start="38"><li>对订单系统核心流程引入幂等性机制，保证数据不会重复</li></ol> <p>生产方：</p> <p>a). 业务判断法</p> <p>业务代码确保之前是否发送过。</p> <p>b). 状态判断法</p> <p>基于redis，如果发送成功，将信息保存在redis中。</p> <p>消费方：</p> <p>通过业务判断，是否已经处理过。或者生成一个唯一键。</p> <ol start="39"><li>死信队列</li></ol> <p>即死掉的消息的队列</p> <p>订阅死信队列处理过期或者没有完成的队列。</p> <ol start="40"><li>如何保证消息的顺序</li></ol> <p>为了保证有序，需要让数据进入同一个MessageQueue</p> <ol start="41"><li>延迟队列实现红包退款等功能</li></ol> <p>RocketMQ默认支持的延迟级别：1s, 5s, 10s, 30s, 1m, 2m, 3m, 4m, 5m, 6m, 7m, 8m, 9m, 10m, 20m, 30m, 1h, 2h</p> <ol start="42"><li>消息堆积该如何处理</li></ol> <p>增加机器，或者将mq消息先写入到另一个topic中。</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2021-09-20 21:09:30</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/assets/js/app.e5db9849.js" defer></script><script src="/assets/js/3.ed8c06e7.js" defer></script><script src="/assets/js/1.9e75a2be.js" defer></script><script src="/assets/js/37.9156b580.js" defer></script>
+  </body>
+</html>
